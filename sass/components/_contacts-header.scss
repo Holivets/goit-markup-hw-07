@@ -1,0 +1,26 @@
+.contacts-list {
+  display: flex;
+  margin-left: auto;
+  align-items: center;
+}
+.contacts-list li + li {
+  margin-left: 30px;
+}
+.contacts-header {
+  padding: 32px 0;
+
+  color: $text-color;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.02em;
+  transition: color $transitionProperty;
+}
+.contacts-header:hover,
+.contacts-header:focus {
+  color: $accent-color;
+}
+.contacts-header .icon {
+  margin-right: 10px;
+  fill: currentColor;
+}

@@ -1,0 +1,48 @@
+.section {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+.section.no-padding {
+  padding-bottom: 0;
+}
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+.advantages-list.flex {
+  display: flex;
+}
+.advantages-list li {
+  width: 270px;
+}
+.flex > li:not(:last-child) {
+  margin-right: 30px;
+}
+.advantages-list .icon {
+  display: block;
+  padding: 25px 102px;
+  background-color: $secondary-bg-color;
+  border-radius: 4px;
+}
+.advantages-list .title {
+  margin-top: 30px;
+  margin-bottom: 10px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+.advantages-list .details {
+  margin: 0;
+  color: $text-color;
+  font-size: 14px;
+  line-height: 1.7;
+  letter-spacing: 0.03em;
+}
