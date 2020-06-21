@@ -1,40 +1,7 @@
-:root {
-  --title-color: #212121;
-  --secondary-title-color: #ffffff;
-  --text-color: #757575;
-  --accent-color: #2196f3;
-  --secondary-background-color: #f5f4fa;
-  --footer-background-color: #2f303a;
-}
-body {
-  background-color: #ffffff;
-  color: var(--title-color);
-  font-family: Roboto, sans-serif;
-}
-ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-a {
-  display: block;
-  text-decoration: none;
-}
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
-.container {
-  width: 1200px;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin: 0 auto;
-}
 /* стилі для index.html */
 /* header */
 header {
-  border-bottom: 1px solid #ececec;
+  border-bottom: 1px solid $border-header-color;
 }
 .header-nav {
   display: flex;
@@ -44,15 +11,15 @@ nav {
   align-items: center;
 }
 .logo {
-  color: var(--accent-color);
-  font-family: raleway, sans-serif;
+  color: $accent-color;
+  font-family: $logoFont;
   font-weight: 700;
   font-size: 26px;
   line-height: 1.2;
   letter-spacing: 0.03em;
 }
 .logo-header {
-  color: var(--title-color);
+  color: $title-color;
 }
 .site-nav {
   display: flex;
@@ -67,21 +34,19 @@ nav {
 .site-nav .link {
   padding: 32px 0;
 
-  color: var(--title-color);
+  color: $title-color;
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
-  transition-property: color;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color $transitionProperty;
 }
 .site-nav .link:hover,
 .site-nav .link:focus {
-  color: var(--accent-color);
+  color: $accent-color;
 }
 .link.current {
-  color: var(--accent-color);
+  color: $accent-color;
 }
 .link.current::after {
   content: '';
@@ -91,7 +56,7 @@ nav {
   border-radius: 2px;
   bottom: 0;
   left: 0;
-  background-color: var(--accent-color);
+  background-color: $accent-color;
 }
 .contacts-list {
   display: flex;
@@ -104,16 +69,16 @@ nav {
 .contacts-header {
   padding: 32px 0;
 
-  color: var(--text-color);
+  color: $text-color;
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color $transitionProperty;
 }
 .contacts-header:hover,
 .contacts-header:focus {
-  color: var(--accent-color);
+  color: $accent-color;
 }
 .contacts-header .icon {
   margin-right: 10px;
@@ -132,7 +97,7 @@ nav {
   margin-right: auto;
   background-repeat: no-repeat;
   background-position: center;
-  background-color: rgba(47, 48, 58);
+  background-color: rgb(47, 48, 58);
   text-align: center;
 }
 .container.hero {
@@ -143,7 +108,7 @@ nav {
   margin-top: 0;
   margin-bottom: 30px;
 
-  color: var(--secondary-title-color);
+  color: $secondary-title-color;
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
@@ -156,8 +121,8 @@ nav {
   padding: 10px 32px;
   min-width: 200px;
 
-  color: var(--secondary-title-color);
-  background-color: var(--accent-color);
+  color: $secondary-title-color;
+  background-color: $accent-color;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   font-weight: 700;
   font-size: 16px;
@@ -181,7 +146,7 @@ nav {
   height: 100%;
   background: rgba(0, 0, 0, 0.2);
   opacity: 1;
-  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity $transitionProperty;
 }
 .backdrop.is-hidden {
   opacity: 0;
@@ -198,9 +163,9 @@ nav {
   width: 528px;
   height: 581px;
   padding: 40px;
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform $transitionProperty;
 
-  background-color: var(--secondary-title-color);
+  background-color: $secondary-title-color;
   box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 1px 3px rgba(0, 0, 0, 0.12);
   border-radius: 4px;
@@ -212,14 +177,14 @@ nav {
   width: 30px;
   height: 30px;
 
-  background-color: var(--secondary-title-color);
+  background-color: $secondary-title-color;
   padding: 0;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
 }
 .close-button:hover,
 .close-button:focus {
-  fill: var(--accent-color);
+  fill: $accent-color;
 }
 .modal-title {
   display: block;
@@ -239,44 +204,44 @@ li > input {
   padding: 12px 16px 12px 42px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
-  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border $transitionProperty;
 
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.01em;
-  color: var(--text-color);
+  color: $text-color;
 }
 input:focus {
   outline: none;
-  border: 1px solid var(--accent-color);
+  border: 1px solid $accent-color;
 }
 .form-label {
   position: absolute;
   top: 50%;
   left: 42px;
   transform: translateY(-50%);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform $transitionProperty,
+    color $transitionProperty;
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.01em;
-  color: var(--text-color);
+  color: $text-color;
 }
 li > input:focus + .form-label,
 li > input:not(:placeholder-shown) + .form-label {
   transform: translate(-25px, -38px);
-  color: var(--accent-color);
+  color: $accent-color;
 }
 .input-list .icon {
   position: absolute;
   top: 50%;
   left: 19px;
   transform: translateY(-50%);
-  fill: var(--title-color);
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  fill: $title-color;
+  transition: fill $transitionProperty;
 }
 li > input:focus ~ .icon {
-  fill: var(--accent-color);
+  fill: $accent-color;
 }
 .textarea-form {
   position: relative;
@@ -289,33 +254,33 @@ textarea {
   height: 120px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
-  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border $transitionProperty;
 
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.01em;
-  color: var(--text-color);
+  color: $text-color;
 }
 textarea:focus {
   outline: none;
-  border: 1px solid var(--accent-color);
+  border: 1px solid $accent-color;
 }
 .textarea-label {
   position: absolute;
   top: 10%;
   left: 16px;
   transform: translateY(-30%);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform $transitionProperty,
+    color $transitionProperty;
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.01em;
-  color: var(--text-color);
+  color: $text-color;
 }
 textarea:focus + .textarea-label,
 textarea:not(:placeholder-shown) + .textarea-label {
   transform: translateY(-35px);
-  color: var(--accent-color);
+  color: $accent-color;
 }
 .checkbox-form {
   position: relative;
@@ -336,26 +301,26 @@ textarea:not(:placeholder-shown) + .textarea-label {
   font-size: 14px;
   line-height: 1.7;
   letter-spacing: 0.03em;
-  color: var(--text-color);
+  color: $text-color;
 }
 .agreement .icon {
   display: inline-block;
   margin-right: 8px;
   height: 16px;
   width: 15px;
-  border: 2px solid var(--title-color);
+  border: 2px solid $title-color;
   border-radius: 2px;
 }
 .checkbox:checked + .icon {
   border-color: transparent;
-  background-color: var(--accent-color);
+  background-color: $accent-color;
   background-image: url(../images/check.svg);
   background-size: contain;
   background-origin: border-box;
 }
 .agreement-link {
   text-decoration: underline;
-  color: var(--accent-color);
+  color: $accent-color;
 }
 .modal-button {
   display: block;
@@ -364,8 +329,8 @@ textarea:not(:placeholder-shown) + .textarea-label {
   margin-right: auto;
   width: 200px;
   padding: 10px 55px;
-  color: var(--secondary-title-color);
-  background: var(--accent-color);
+  color: $secondary-title-color;
+  background: $accent-color;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border: 0;
   border-radius: 4px;
@@ -399,7 +364,7 @@ textarea:not(:placeholder-shown) + .textarea-label {
 .advantages-list .icon {
   display: block;
   padding: 25px 102px;
-  background-color: var(--secondary-background-color);
+  background-color: $secondary-bg-color;
   border-radius: 4px;
 }
 .advantages-list .title {
@@ -413,7 +378,7 @@ textarea:not(:placeholder-shown) + .textarea-label {
 }
 .advantages-list .details {
   margin: 0;
-  color: var(--text-color);
+  color: $text-color;
   font-size: 14px;
   line-height: 1.7;
   letter-spacing: 0.03em;
@@ -450,7 +415,7 @@ textarea:not(:placeholder-shown) + .textarea-label {
   bottom: 27px;
   margin: 0;
 
-  color: var(--secondary-title-color);
+  color: $secondary-title-color;
   font-weight: 700;
   font-size: 14px;
   line-height: 1.14;
@@ -460,14 +425,14 @@ textarea:not(:placeholder-shown) + .textarea-label {
 }
 /* секція команди */
 .section.team {
-  background-color: var(--secondary-background-color);
+  background-color: $secondary-bg-color;
 }
 .team.flex {
   display: flex;
 }
 .team > li {
   width: 270px;
-  background-color: var(--secondary-title-color);
+  background-color: $secondary-title-color;
   box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 1px 3px rgba(0, 0, 0, 0.12);
 }
@@ -484,7 +449,7 @@ textarea:not(:placeholder-shown) + .textarea-label {
 .member-position {
   margin-top: 0;
   margin-bottom: 16px;
-  color: var(--text-color);
+  color: $text-color;
   font-size: 16px;
   line-height: 1.19;
   text-align: center;
@@ -505,14 +470,14 @@ textarea:not(:placeholder-shown) + .textarea-label {
   border-radius: 50px;
   width: 44px;
   height: 44px;
-  fill: #afb1b8;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  fill: $svgColor;
+  transition: background-color $transitionProperty,
+    fill $transitionProperty;
 }
 .contacts-flex a:hover,
 .contacts-flex a:focus {
-  background-color: var(--accent-color);
-  fill: var(--secondary-title-color);
+  background-color: $accent-color;
+  fill: $secondary-title-color;
 }
 /* секція постійних клієнтів-тут йдуть картинки */
 .clients.flex {
@@ -521,21 +486,21 @@ textarea:not(:placeholder-shown) + .textarea-label {
 }
 .clients .icon {
   display: block;
-  fill: #afb1b8;
-  border: 1px solid #afb1b8;
+  fill: $svgColor;
+  border: 1px solid $svgColor;
   border-radius: 4px;
   padding: 20px 0px;
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill $transitionProperty,
+    border-color $transitionProperty;
 }
 .clients-link:hover .icon,
 .clients-link:focus .icon {
-  fill: var(--accent-color);
-  border-color: var(--accent-color);
+  fill: $accent-color;
+  border-color: $accent-color;
 }
 /* footer */
 footer {
-  background-color: var(--footer-background-color);
+  background-color: $footer-bg-color;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 .footer-flex {
@@ -546,7 +511,7 @@ footer {
   padding-bottom: 60px;
 }
 .logo-footer {
-  color: var(--secondary-title-color);
+  color: $secondary-title-color;
 }
 .address-section {
   font-style: normal;
@@ -555,7 +520,7 @@ footer {
   margin-top: 10px;
   margin-bottom: 0;
 
-  color: var(--secondary-title-color);
+  color: $secondary-title-color;
   font-size: 14px;
   line-height: 1.7;
   letter-spacing: 0.03em;
@@ -567,17 +532,17 @@ footer {
   font-size: 14px;
   line-height: 1.7;
   letter-spacing: 0.03em;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color $transitionProperty;
 }
 .contacts-footer:hover,
 .contacts-footer:focus {
-  color: var(--accent-color);
+  color: $accent-color;
 }
 .footer-title {
   display: block;
   margin-bottom: 20px;
 
-  color: var(--secondary-title-color);
+  color: $secondary-title-color;
   font-weight: 700;
   font-size: 14px;
   line-height: 1.7;
@@ -597,13 +562,13 @@ footer {
   border-radius: 50px;
   width: 44px;
   height: 44px;
-  fill: var(--secondary-title-color);
+  fill: $secondary-title-color;
   background-color: rgba(255, 255, 255, 0.1);
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: $transitionProperty;
 }
 .socials a:hover,
 .socials a:focus {
-  background-color: var(--accent-color);
+  background-color: $accent-color;
 }
 .subscription input[type='email'] {
   margin-right: 12px;
@@ -629,8 +594,8 @@ footer {
   padding: 10px 28px 10px 29px;
   min-width: 200px;
 
-  color: var(--secondary-title-color);
-  background-color: var(--accent-color);
+  color: $secondary-title-color;
+  background-color: $accent-color;
   font-weight: 900;
   font-size: 16px;
   line-height: 1.87;
@@ -654,8 +619,8 @@ footer {
   padding: 6px 22px;
   border: 0;
 
-  background-color: var(--secondary-background-color);
-  color: #212121;
+  background-color: $secondary-bg-color;
+  color: $title-color;
   font-family: inherit;
   font-weight: 500;
   font-size: 16px;
@@ -664,14 +629,14 @@ footer {
   letter-spacing: 0.03em;
   border-radius: 4px;
   cursor: pointer;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color $transitionProperty,
+    color $transitionProperty,
+    box-shadow $transitionProperty;
 }
 .filter-buttons:hover,
 .filter-buttons:focus {
-  background-color: var(--accent-color);
-  color: var(--secondary-title-color);
+  background-color: $accent-color;
+  color: $secondary-title-color;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.12), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 3px 1px rgba(0, 0, 0, 0.1);
 }
@@ -686,7 +651,7 @@ footer {
   /* правий margin я поставив вище в усіх flex>li */
 }
 .card-link {
-  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: box-shadow $transitionProperty;
 }
 .card-link:hover,
 .card-link:focus {
@@ -701,7 +666,7 @@ footer {
 }
 .card-info {
   padding: 20px 24px;
-  border: 1px solid #eeeeee;
+  border: 1px solid $border-portfolio-color;
   border-top: none;
 }
 .examples-name {
@@ -712,7 +677,7 @@ footer {
   font-size: 18px;
   line-height: 2;
   letter-spacing: 0.06em;
-  color: var(--title-color);
+  color: $title-color;
 }
 .examples-type {
   margin: 0;
@@ -720,7 +685,7 @@ footer {
   font-size: 16px;
   line-height: 1.9;
   letter-spacing: 0.03em;
-  color: var(--text-color);
+  color: $text-color;
 }
 .card-action {
   position: relative;
@@ -730,9 +695,8 @@ footer {
   position: absolute;
   width: 100%;
   height: 100%;
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
+  transition: transform $transitionProperty,
+    background-color $transitionProperty;
 .card-link:hover .overlay,
 .card-link:focus .overlay {
   background-color: rgba(33, 150, 243, 0.9);
@@ -747,5 +711,5 @@ footer {
   line-height: 1.55;
   letter-spacing: 0.03em;
   margin: 0;
-  color: var(--secondary-title-color);
+  color: $secondary-title-color;
 }
