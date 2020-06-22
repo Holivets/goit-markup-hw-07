@@ -95,6 +95,8 @@ li > input {
   li > input:not(:placeholder-shown) + & {
     transform: translate(-25px, -38px);
     color: $accent-color;
+    font-size: 12px;
+    line-height: 1.16;
   }
 }
 .input-list .icon {
@@ -143,6 +145,8 @@ textarea {
   textarea:not(:placeholder-shown) + & {
     transform: translateY(-35px);
     color: $accent-color;
+    font-size: 12px;
+    line-height: 1.16;
   }
 }
 .checkbox-form {

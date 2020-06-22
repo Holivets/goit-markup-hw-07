@@ -299,6 +299,8 @@ li > input:not(:placeholder-shown) + .form-label {
   -webkit-transform: translate(-25px, -38px);
           transform: translate(-25px, -38px);
   color: #2196f3;
+  font-size: 12px;
+  line-height: 1.16;
 }
 
 .input-list .icon {
@@ -358,6 +360,8 @@ textarea:not(:placeholder-shown) + .textarea-label {
   -webkit-transform: translateY(-35px);
           transform: translateY(-35px);
   color: #2196f3;
+  font-size: 12px;
+  line-height: 1.16;
 }
 
 .checkbox-form {
