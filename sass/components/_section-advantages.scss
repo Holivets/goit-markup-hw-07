@@ -5,24 +5,18 @@
 .section.no-padding {
   padding-bottom: 0;
 }
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  clip: rect(0 0 0 0);
-  overflow: hidden;
+.fake-title {
+  @extend %visually-hidden;
 }
-.advantages-list.flex {
+.advantages-list {
   display: flex;
 }
 .advantages-list li {
   width: 270px;
-}
-.flex > li:not(:last-child) {
-  margin-right: 30px;
+
+  &:not(:last-child) {
+    margin-right: 30px;
+  }
 }
 .advantages-list .icon {
   display: block;

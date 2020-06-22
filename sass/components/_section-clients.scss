@@ -1,8 +1,8 @@
-.clients.flex {
+.clients-list {
   display: flex;
   justify-content: space-evenly;
 }
-.clients .icon {
+.clients-link .icon {
   display: block;
   fill: $svgColor;
   border: 1px solid $svgColor;

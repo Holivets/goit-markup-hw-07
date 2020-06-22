@@ -41,10 +41,11 @@
   padding: 0;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
-}
-.close-button:hover,
-.close-button:focus {
-  fill: $accent-color;
+
+  &:hover,
+  &:focus {
+    fill: $accent-color;
+  }
 }
 .modal-title {
   display: block;
@@ -70,10 +71,14 @@ li > input {
   line-height: 1.14;
   letter-spacing: 0.01em;
   color: $text-color;
-}
-input:focus {
-  outline: none;
-  border: 1px solid $accent-color;
+
+  &:focus {
+    outline: none;
+    border: 1px solid $accent-color;
+  }
+  &:focus ~ .icon {
+    fill: $accent-color;
+  }
 }
 .form-label {
   position: absolute;
@@ -85,11 +90,12 @@ input:focus {
   line-height: 1.14;
   letter-spacing: 0.01em;
   color: $text-color;
-}
-li > input:focus + .form-label,
-li > input:not(:placeholder-shown) + .form-label {
-  transform: translate(-25px, -38px);
-  color: $accent-color;
+
+  li > input:focus + &,
+  li > input:not(:placeholder-shown) + & {
+    transform: translate(-25px, -38px);
+    color: $accent-color;
+  }
 }
 .input-list .icon {
   position: absolute;
@@ -98,9 +104,6 @@ li > input:not(:placeholder-shown) + .form-label {
   transform: translateY(-50%);
   fill: $title-color;
   transition: fill $transitionProperty;
-}
-li > input:focus ~ .icon {
-  fill: $accent-color;
 }
 .textarea-form {
   position: relative;
@@ -119,10 +122,11 @@ textarea {
   line-height: 1.14;
   letter-spacing: 0.01em;
   color: $text-color;
-}
-textarea:focus {
-  outline: none;
-  border: 1px solid $accent-color;
+
+  &:focus {
+    outline: none;
+    border: 1px solid $accent-color;
+  }
 }
 .textarea-label {
   position: absolute;
@@ -134,24 +138,26 @@ textarea:focus {
   line-height: 1.14;
   letter-spacing: 0.01em;
   color: $text-color;
-}
-textarea:focus + .textarea-label,
-textarea:not(:placeholder-shown) + .textarea-label {
-  transform: translateY(-35px);
-  color: $accent-color;
+
+  textarea:focus + &,
+  textarea:not(:placeholder-shown) + & {
+    transform: translateY(-35px);
+    color: $accent-color;
+  }
 }
 .checkbox-form {
   position: relative;
 }
 .checkbox {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  clip: rect(0 0 0 0);
-  overflow: hidden;
+  @extend %visually-hidden;
+
+  &:checked + .icon {
+    border-color: transparent;
+    background-color: $accent-color;
+    background-image: url(../images/check.svg);
+    background-size: contain;
+    background-origin: border-box;
+  }
 }
 .agreement {
   display: inline-flex;
@@ -168,13 +174,6 @@ textarea:not(:placeholder-shown) + .textarea-label {
   width: 15px;
   border: 2px solid $title-color;
   border-radius: 2px;
-}
-.checkbox:checked + .icon {
-  border-color: transparent;
-  background-color: $accent-color;
-  background-image: url(../images/check.svg);
-  background-size: contain;
-  background-origin: border-box;
 }
 .agreement-link {
   text-decoration: underline;

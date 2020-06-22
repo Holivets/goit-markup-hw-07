@@ -32,10 +32,11 @@ footer {
   line-height: 1.7;
   letter-spacing: 0.03em;
   transition: color $transitionProperty;
-}
-.contacts-footer:hover,
-.contacts-footer:focus {
-  color: $accent-color;
+
+  &:hover,
+  &:focus {
+    color: $accent-color;
+  }
 }
 .footer-title {
   display: block;
@@ -64,8 +65,9 @@ footer {
   fill: $secondary-title-color;
   background-color: rgba(255, 255, 255, 0.1);
   transition: $transitionProperty;
-}
-.socials a:hover,
-.socials a:focus {
-  background-color: $accent-color;
+
+  &:hover,
+  &:focus {
+    background-color: $accent-color;
+  }
 }

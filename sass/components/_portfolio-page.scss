@@ -2,15 +2,8 @@
   padding-top: 94px;
   padding-bottom: 94px;
 }
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  clip: rect(0 0 0 0);
-  overflow: hidden;
+.fake-title {
+  @extend %visually-hidden;
 }
 .portfolio-filter {
   display: flex;
@@ -36,39 +29,41 @@
   cursor: pointer;
   transition: background-color $transitionProperty, color $transitionProperty,
     box-shadow $transitionProperty;
+
+  &:hover,
+  &:focus {
+    background-color: $accent-color;
+    color: $secondary-title-color;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.12), 0px 1px 2px rgba(0, 0, 0, 0.08),
+      0px 3px 1px rgba(0, 0, 0, 0.1);
+  }
 }
-.filter-buttons:hover,
-.filter-buttons:focus {
-  background-color: $accent-color;
-  color: $secondary-title-color;
-  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.12), 0px 1px 2px rgba(0, 0, 0, 0.08),
-    0px 3px 1px rgba(0, 0, 0, 0.1);
-}
-/* список проектів портфоліо */
-.work.flex {
+.work-list {
   display: flex;
   flex-wrap: wrap;
 }
-.work li {
+.work-list li {
   width: 370px;
   margin-bottom: 30px;
-}
-.work li:not(:last-child) {
-  margin-right: 30px;
+
+  &:not(:last-child) {
+    margin-right: 30px;
+  }
+  &:nth-child(3n) {
+    margin-right: 0;
+  }
+  &:nth-last-child(-n + 3) {
+    margin-bottom: 0;
+  }
 }
 .card-link {
   transition: box-shadow $transitionProperty;
-}
-.card-link:hover,
-.card-link:focus {
-  box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.16), 0px 4px 4px rgba(0, 0, 0, 0.06),
-    0px 1px 1px rgba(0, 0, 0, 0.12);
-}
-.work li:nth-child(3n) {
-  margin-right: 0;
-}
-.work li:nth-last-child(-n + 3) {
-  margin-bottom: 0;
+
+  &:hover,
+  &:focus {
+    box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.16), 0px 4px 4px rgba(0, 0, 0, 0.06),
+      0px 1px 1px rgba(0, 0, 0, 0.12);
+  }
 }
 .card-info {
   padding: 20px 24px;
@@ -103,12 +98,12 @@
   height: 100%;
   transition: transform $transitionProperty,
     background-color $transitionProperty;
-}
 
-.card-link:hover .overlay,
-.card-link:focus .overlay {
-  background-color: rgba(33, 150, 243, 0.9);
-  transform: translateY(-100%);
+  .card-link:hover &,
+  .card-link:focus & {
+    background-color: rgba(33, 150, 243, 0.9);
+    transform: translateY(-100%);
+  }
 }
 .examples-information {
   position: absolute;

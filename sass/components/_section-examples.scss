@@ -8,21 +8,26 @@
   text-align: center;
   letter-spacing: 0.03em;
 }
-.examples.flex {
+.examples-list {
   display: flex;
 }
-.examples > li {
+.examples-list li {
   position: relative;
   display: flex;
   justify-content: center;
-}
-.examples > li::before {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 70px;
-  bottom: 0;
-  background-color: rgba(47, 48, 58, 0.8);
+
+  &:not(:last-child) {
+    margin-right: 30px;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 70px;
+    bottom: 0;
+    background-color: rgba(47, 48, 58, 0.8);
+  }
 }
 .examples-title {
   position: absolute;

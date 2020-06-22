@@ -54,12 +54,12 @@ nav {
   margin-left: 86px;
 }
 
-.site-nav li:not(:last-child) {
-  margin-right: 50px;
+.site-nav li {
+  position: relative;
 }
 
-.site-nav > li {
-  position: relative;
+.site-nav li:not(:last-child) {
+  margin-right: 50px;
 }
 
 .site-nav .link {
@@ -73,8 +73,7 @@ nav {
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.site-nav .link:hover,
-.site-nav .link:focus {
+.site-nav .link:hover, .site-nav .link:focus {
   color: #2196f3;
 }
 
@@ -106,7 +105,7 @@ nav {
   color: #212121;
 }
 
-.contacts-list {
+.header-list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -116,7 +115,7 @@ nav {
           align-items: center;
 }
 
-.contacts-list li + li {
+.header-list li + li {
   margin-left: 30px;
 }
 
@@ -131,8 +130,7 @@ nav {
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.contacts-header:hover,
-.contacts-header:focus {
+.contacts-header:hover, .contacts-header:focus {
   color: #2196f3;
 }
 
@@ -239,8 +237,7 @@ nav {
   border-radius: 50%;
 }
 
-.close-button:hover,
-.close-button:focus {
+.close-button:hover, .close-button:focus {
   fill: #2196f3;
 }
 
@@ -272,9 +269,13 @@ li > input {
   color: #757575;
 }
 
-input:focus {
+li > input:focus {
   outline: none;
   border: 1px solid #2196f3;
+}
+
+li > input:focus ~ .icon {
+  fill: #2196f3;
 }
 
 .form-label {
@@ -309,10 +310,6 @@ li > input:not(:placeholder-shown) + .form-label {
   fill: #212121;
   -webkit-transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-li > input:focus ~ .icon {
-  fill: #2196f3;
 }
 
 .textarea-form {
@@ -367,15 +364,12 @@ textarea:not(:placeholder-shown) + .textarea-label {
   position: relative;
 }
 
-.checkbox {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  clip: rect(0 0 0 0);
-  overflow: hidden;
+.checkbox:checked + .icon {
+  border-color: transparent;
+  background-color: #2196f3;
+  background-image: url(../images/check.svg);
+  background-size: contain;
+  background-origin: border-box;
 }
 
 .agreement {
@@ -398,14 +392,6 @@ textarea:not(:placeholder-shown) + .textarea-label {
   width: 15px;
   border: 2px solid #212121;
   border-radius: 2px;
-}
-
-.checkbox:checked + .icon {
-  border-color: transparent;
-  background-color: #2196f3;
-  background-image: url(../images/check.svg);
-  background-size: contain;
-  background-origin: border-box;
 }
 
 .agreement-link {
@@ -432,16 +418,7 @@ textarea:not(:placeholder-shown) + .textarea-label {
   letter-spacing: 0.06em;
 }
 
-.section {
-  padding-top: 94px;
-  padding-bottom: 94px;
-}
-
-.section.no-padding {
-  padding-bottom: 0;
-}
-
-.visually-hidden {
+.checkbox, .fake-title {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -452,7 +429,16 @@ textarea:not(:placeholder-shown) + .textarea-label {
   overflow: hidden;
 }
 
-.advantages-list.flex {
+.section {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+
+.section.no-padding {
+  padding-bottom: 0;
+}
+
+.advantages-list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -462,7 +448,7 @@ textarea:not(:placeholder-shown) + .textarea-label {
   width: 270px;
 }
 
-.flex > li:not(:last-child) {
+.advantages-list li:not(:last-child) {
   margin-right: 30px;
 }
 
@@ -501,13 +487,13 @@ textarea:not(:placeholder-shown) + .textarea-label {
   letter-spacing: 0.03em;
 }
 
-.examples.flex {
+.examples-list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.examples > li {
+.examples-list li {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -517,7 +503,11 @@ textarea:not(:placeholder-shown) + .textarea-label {
           justify-content: center;
 }
 
-.examples > li::before {
+.examples-list li:not(:last-child) {
+  margin-right: 30px;
+}
+
+.examples-list li::before {
   content: '';
   position: absolute;
   width: 100%;
@@ -543,17 +533,21 @@ textarea:not(:placeholder-shown) + .textarea-label {
   background-color: #f5f4fa;
 }
 
-.team.flex {
+.team-list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.team > li {
+.team-list > li {
   width: 270px;
   background-color: #ffffff;
   -webkit-box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12);
           box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+.team-list > li:not(:last-child) {
+  margin-right: 30px;
 }
 
 .member-name {
@@ -576,7 +570,7 @@ textarea:not(:placeholder-shown) + .textarea-label {
   letter-spacing: 0.03em;
 }
 
-.contacts-flex {
+.contacts-list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -586,20 +580,20 @@ textarea:not(:placeholder-shown) + .textarea-label {
   margin-bottom: 24px;
 }
 
-.contacts-flex li:not(:last-child) {
+.contacts-list li:not(:last-child) {
   margin-right: 10px;
 }
 
-.contacts-flex a {
+.contacts-list a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   border-radius: 50px;
   width: 44px;
   height: 44px;
@@ -608,13 +602,12 @@ textarea:not(:placeholder-shown) + .textarea-label {
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.contacts-flex a:hover,
-.contacts-flex a:focus {
+.contacts-list a:hover, .contacts-list a:focus {
   background-color: #2196f3;
   fill: #ffffff;
 }
 
-.clients.flex {
+.clients-list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -623,7 +616,7 @@ textarea:not(:placeholder-shown) + .textarea-label {
           justify-content: space-evenly;
 }
 
-.clients .icon {
+.clients-link .icon {
   display: block;
   fill: #afb1b8;
   border: 1px solid #afb1b8;
@@ -686,8 +679,7 @@ footer {
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.contacts-footer:hover,
-.contacts-footer:focus {
+.contacts-footer:hover, .contacts-footer:focus {
   color: #2196f3;
 }
 
@@ -731,8 +723,7 @@ footer {
   transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.socials a:hover,
-.socials a:focus {
+.socials a:hover, .socials a:focus {
   background-color: #2196f3;
 }
 

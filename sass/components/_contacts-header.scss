@@ -1,9 +1,9 @@
-.contacts-list {
+.header-list {
   display: flex;
   margin-left: auto;
   align-items: center;
 }
-.contacts-list li + li {
+.header-list li + li {
   margin-left: 30px;
 }
 .contacts-header {
@@ -15,10 +15,11 @@
   line-height: 1.14;
   letter-spacing: 0.02em;
   transition: color $transitionProperty;
-}
-.contacts-header:hover,
-.contacts-header:focus {
-  color: $accent-color;
+
+  &:hover,
+  &:focus {
+    color: $accent-color;
+  }
 }
 .contacts-header .icon {
   margin-right: 10px;
